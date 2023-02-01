@@ -66,7 +66,9 @@ img{
     gap: 30px;
 
 }
-
+#check, .toggle__menu{
+    display: none;
+}
 .navbar-menu a{
     font-size: 20px;
     color: black;
@@ -253,21 +255,104 @@ footer{
 }
 
 
-.container-flex{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-   
-}
+    .container-flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+    }
 
-.container-flex img{
-    width: 40px;
-    height: 40px;
-}
+    .container-flex img{
+        width: 40px;
+        height: 40px;
+    }
 
-.container-redes{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
+    .container-redes{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
 
+    @media screen and (max-width: 650px) {
+        .hero-information h1{
+        font-size: 20px;
+        line-height: 30px;
+    }
+    
+    .hero-information p{
+        font-size: 18px;
+    }
+    
+    .hero{
+        background-position: center left;
+    }
+    
+    .nosotros-info p{
+        font-size: 16px;
+    }
+    
+    .card-info{
+        width: 43%;
+    }
+    
+    .contacto-titulo{
+        font-size: 35px;
+    }
+    
+    .container-flex {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .container-flex img{
+        width: 20px;
+    }
+    
+    .container-titulo p {
+        font-size: 16px;
+    }
+    
+    .container-redes{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    }
+    
+    @media screen and (max-width: 768px) {
+        .toggle__menu {
+        display: block;
+        position: fixed;
+        right: 20px;
+        top: 16px;
+        font-size: 30px;
+        }
+    
+        .navbar-menu {
+        display: block;
+        position: fixed;
+        top: 67px;
+        width: 40%;
+        height: 70vh;
+        left: -100%;
+        right: 0;
+        background-color: rgb(174, 203, 232);
+        padding: 25px;
+        cursor: pointer;
+        transition: all .9s;
+        }
+    
+        .navbar-menu li {
+        padding: 15px;
+        font-size: 29px;
+        }
+    
+        #check:checked ~ ul {
+        display: block;
+        position: fixed;
+        left: 0;
+        transition: all .9s;
+        }
+    }
