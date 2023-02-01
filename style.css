@@ -79,7 +79,7 @@ img{
 }
 
 .hero{
-    background-image: linear-gradient(90deg, rgba(5, 5, 5, 0.726) 0%, rgba(0, 0, 0, 0.712) 60%), url(../e-commerce/img/banner\ principal.jpg);
+    background-image: linear-gradient(90deg, rgba(5, 5, 5, 0.726) 0%, rgba(0, 0, 0, 0.712) 60%), url(img/banner\ principal.jpg);
     height: 500px;
     background-size: cover;
     background-position: center center;
