@@ -251,6 +251,8 @@ footer{
     color: white;
     padding: 30px;
 }
+
+
 .container-flex{
     display: flex;
     justify-content: space-between;
@@ -268,3 +270,4 @@ footer{
     gap: 20px;
     align-items: center;
 }
+
