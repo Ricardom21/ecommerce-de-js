@@ -22,8 +22,8 @@
                 <li><a href="#productos">Productos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
                 <li>
-                    <a class="boton-carrito" href="carrito.html">
-                        <i class="fa-solid fa-cart-shopping"></i> Carrito <span class="numerito">0</span>
+                    <a class="boton-carrito" href="./carrito.html">
+                        <i class="fa-solid fa-cart-shopping"></i> Carrito <span id="valorCarrito" class="numerito">0</span>
                     </a>
                 </li>
             </ul>
@@ -52,7 +52,11 @@
             </div>
         </section>
         <!--productos-->
-        <section id="productos" class="productos">
+        <section class="productos">
+
+            <h3 class="productos-titulos">Nuestros Productos</h3>
+            <div id="productos"></div>
+        <!--
             <h3 class="productos-titulos">Nuestros Productos</h3>
             <div class="container">
                 <div class="card-flex">
@@ -63,7 +67,7 @@
                         <h3>Coctelera</h3>
                         <span>⭐⭐⭐⭐⭐</span>
                         <p>$ 2.500</p>
-                        <button type="submit">Comprar</button>
+                        <button class="producto-agregar">Agregar</button>
                     </div>
                     <div class="card-info">
                         <div class="product-image">
@@ -72,7 +76,7 @@
                         <h3>Jigger</h3>
                         <span>⭐⭐⭐⭐⭐</span>
                         <p>$ 1.500</p>
-                        <button type="submit">Comprar</button>
+                         <button class="producto-agregar">Agregar</button>
                     </div>
                     <div class="card-info">
                         <div class="product-image">
@@ -81,7 +85,7 @@
                         <h3>Cuchara</h3>
                         <span>⭐⭐⭐⭐⭐</span>
                         <p>$ 3.500</p>
-                        <button type="submit">Comprar</button>
+                        <button class="producto-agregar">Agregar</button>
                     </div>
                     <div class="card-info">
                         <div class="product-image">
@@ -90,7 +94,7 @@
                         <h3>Dosificador</h3>
                         <span>⭐⭐⭐⭐⭐</span>
                         <p>$ 500</p>
-                        <button type="submit">Comprar</button>
+                        <button class="producto-agregar">Agregar</button>
                     </div>
                     <div class="card-info">
                         <div class="product-image">
@@ -99,7 +103,7 @@
                         <h3>Mortero</h3>
                         <span>⭐⭐⭐⭐⭐</span>
                         <p>$ 5.500</p>
-                        <button type="submit">Comprar</button>
+                       <button class="producto-agregar">Agregar</button>
                     </div>
                     <div class="card-info">
                         <div class="product-image">
@@ -108,7 +112,7 @@
                         <h3>Copas</h3>
                         <span>⭐⭐⭐⭐⭐</span>
                         <p>$ 10.000</p>
-                        <button type="submit">Comprar</button>
+                         <button class="producto-agregar">Agregar</button>
                     </div>
                     <div class="card-info">
                         <div class="product-image">
@@ -117,7 +121,7 @@
                         <h3>Esterilla</h3>
                         <span>⭐⭐⭐⭐⭐</span>
                         <p>$ 6.500</p>
-                        <button type="submit">Comprar</button>
+                        <button class="producto-agregar">Agregar</button>
                     </div>
                     <div class="card-info">
                         <div class="product-image">
@@ -126,11 +130,13 @@
                         <h3>Escarchador</h3>
                         <span>⭐⭐⭐⭐⭐</span>
                         <p>$ 7.500</p>
-                        <button type="submit">Comprar</button>
+                        <button class="producto-agregar">Agregar</button>
                     </div>
                 </div>
             </div>
+        -->
         </section>
+    
         <section id="contacto" class="contacto">
             <h3 class="contacto-titulo">Contactanos</h3>
             <div class="container">
@@ -163,5 +169,9 @@
             </div>
         </div>
     </footer>
+
+    <script src="productos.js"></script>
+    <script src="apps.js"></script>
+
 </body>
 </html>
