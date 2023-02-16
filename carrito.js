@@ -29,3 +29,5 @@ const pintarProductos = () => {
 };
 
 pintarProductos()
+
+const totalPrecio = productos.reduce((acumulador, elemento) => acumulador + elemento.precio, 0)

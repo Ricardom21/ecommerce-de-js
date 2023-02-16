@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="header">
-        <h2 class="logo">Bartender.R</h2>
+        <h2 class="logo"> <a href="./index.html"></a> Bartender.R</h2>
         <nav class="navbar">
             <input type="checkbox" id="check">
 					<label for="check" class="toggle__menu">
@@ -19,7 +19,13 @@
             <ul class="navbar-menu">
             
                 <li>
-                    <a class="boton-carrito" href="./carrito.html">
+                    <a class="boton-volver" href="./index.html">
+                        <i class="fa-solid fa-arrow-left"></i> Seguir Comprando
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="boton-carrito active" href="./carrito.html">
                         <i class="fa-solid fa-cart-shopping"></i> Carrito <span id="valorCarrito" class="numerito">0</span>
                     </a>
                 </li>
@@ -32,9 +38,11 @@
          </div>
          <section class="productos">
 
-            <h3 class="productos-titulos"> Productos Seleccionados</h3>
+            <h3 class="productos-titulos"> Carrito</h3>
             <div id="productos"></div>
-       
+            <p class="carrito-vacio" >Tu carrito esta vacio. <i class="fa-solid fa-face-frown"></i></p>
+
+           
         </section>
 
     </main>
