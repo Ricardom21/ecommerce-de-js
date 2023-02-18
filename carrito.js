@@ -19,15 +19,17 @@ const pintarProductos = () => {
                 <h3>${productos.nombre}</h3>
                 <span>⭐⭐⭐⭐⭐</span>
                 <p>${productos.precio} $</p>
-                <button onclick="aggCarrito(${index})" class="producto-agregar" id="${productos.id}">Agregar</button>
+                
             </div>
         `
         contenedor.appendChild(div)
             index++
+
+            const totalPrecio = carrito.reduce((acumulador, elemento) => acumulador + elemento.precio, 0)
+            console.log(totalPrecio)
         
      })
 };
 
 pintarProductos()
 
-const totalPrecio = productos.reduce((acumulador, elemento) => acumulador + elemento.precio, 0)

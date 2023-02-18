@@ -1,5 +1,6 @@
 const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
+
 const contenedor = document.getElementById('productos')
 let valorTotal = 0
 // pintar el arrays
@@ -37,6 +38,7 @@ function aggCarrito (producto) {
     carrito.push(productos[producto])
     valorCarrito.textContent=carrito.length;
     localStorage.setItem('carrito', JSON.stringify(carrito))
+
 }
 
 

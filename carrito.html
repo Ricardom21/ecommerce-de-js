@@ -25,7 +25,7 @@
                 </li>
                 
                 <li>
-                    <a class="boton-carrito active" href="./carrito.html">
+                    <a class="boton-carrito " href="./carrito.html">
                         <i class="fa-solid fa-cart-shopping"></i> Carrito <span id="valorCarrito" class="numerito">0</span>
                     </a>
                 </li>
@@ -42,7 +42,21 @@
             <div id="productos"></div>
             <p class="carrito-vacio" >Tu carrito esta vacio. <i class="fa-solid fa-face-frown"></i></p>
 
-           
+            <div id="carrito-acciones" class="carrito-acciones disabled">
+                <div class="carrito-acciones-izquierda">
+                    <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
+                </div>
+                <div class="carrito-acciones-derecha">
+                    <div class="carrito-acciones-total">
+                        <p>Total:</p>
+                        <p id="total">$3000</p>
+                    </div>
+                    <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar ahora</button>
+                </div>
+            </div>
+
+            <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por tu compra<i class="fa-light fa-face-awesome"></i>.</p>
+
         </section>
 
     </main>
