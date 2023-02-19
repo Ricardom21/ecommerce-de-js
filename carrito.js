@@ -72,6 +72,8 @@ finalizarCompra.addEventListener("click", () =>
 compraFinalizada())
 
 const compraFinalizada = () => {
-    compraFinalizada.innerText `Muchas gracias por tu compra`
-    console.log(compraFinalizada)
+    finalizarCompra.innerText = "Muchas gracias por tu compra"
+    valorCarrito.innerText=0
+    productos.innerHTML = `muchas gracias`
+   
 }
