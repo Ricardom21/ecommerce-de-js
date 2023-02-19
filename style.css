@@ -365,20 +365,15 @@ footer{
 
     /*carrito*/
 
-    .carrito-vacio{
-        display:none
-    }
-    .carrito-comprado{
-        display: none;
-    }
+  
 
-    .carrito-acciones{
+.botones{
         display: flex;
         justify-content: space-around;
         margin-bottom: 30px;
     }
 
-    .carrito-acciones-vaciar{
+    .btn-carrito-vaciar{
         border: 0;
         background-color: black;
         color: white;
@@ -388,34 +383,26 @@ footer{
         cursor: pointer;
     }
 
-    .carrito-acciones-derecha{
-        display: flex;
-    }
 
-    .carrito-acciones-total{
-        display: flex;
-        border: 0;
-        background-color: rgb(93, 95, 99);
-        color: white;
-        border-radius: 2px solid;
-        padding: 10px;
-        text-transform: uppercase;
-        border-bottom-left-radius: 10px;
-        border-top-left-radius: 10px ;
-    }
-
-    .carrito-acciones-comprar{
+    .btn-carrito-finalizar{
         border: 0;
         background-color: black;
         color: white;
-        border-radius: 2px solid;
+        border-radius: 10px;
         padding: 10px;
         text-transform: uppercase;
         cursor: pointer;
-        border-bottom-right-radius: 10px;
-        border-top-right-radius: 10px ;
+    
     }
 
-    .disabled{
-        display: none;
+    .precio-final{
+        display:flex;
+        justify-content: center;
+        color: rgb(5, 5, 5);
+        border: 1px solid;
+        border-radius: 10px;
+     
+      
     }
+  
+    

@@ -1,4 +1,10 @@
+const actualizarValorCarrito = () => {
+    let valorCarrito = document.getElementById("valorCarrito");
+    valorCarrito.textContent=carrito.length;
+}
+
 const carrito = JSON.parse(localStorage.getItem('carrito')) || []
+actualizarValorCarrito()
 
 const contenedor = document.getElementById('productos')
 

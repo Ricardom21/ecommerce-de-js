@@ -1,5 +1,10 @@
-const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+const actualizarValorCarrito = () => {
+    let valorCarrito = document.getElementById("valorCarrito");
+    valorCarrito.textContent=carrito.length;
+}
 
+const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+actualizarValorCarrito()
 
 const contenedor = document.getElementById('productos')
 let valorTotal = 0
@@ -34,11 +39,9 @@ pintarProductos()
 // funciones
 function aggCarrito (producto) {
     valorTotal += productos[producto].precio
-    let valorCarrito = document.getElementById("valorCarrito");
     carrito.push(productos[producto])
-    valorCarrito.textContent=carrito.length;
     localStorage.setItem('carrito', JSON.stringify(carrito))
-
+    actualizarValorCarrito()
 }
 
 
