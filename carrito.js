@@ -16,6 +16,10 @@ const actualizarPrecioFinal = () => {
 
 actualizarPrecioFinal()
 
+const botonEliminar = document.getElementById("btn-eliminar")
+const botonFinalizar = document.getElementById("finalizar")
+const precio = document.getElementById("precio")
+
 const contenedor = document.getElementById('productos')
 
 // pintar el arrays
@@ -48,11 +52,22 @@ const pintarProductos = () => {
 
 pintarProductos()
 
+// aca cree la funcion para que me salga el alert
+
+
+const sweetAlertCarrito = document.getElementById("btn-finalizar")
+sweetAlertCarrito.addEventListener("click", () => {
+        swal("Gracias por tu compra")
+
+})
+
+
 // aca le agrego la funcion al boton vaciar carrito
 const btnVaciar = document.getElementById("btn-vaciar")
 
-btnVaciar.addEventListener("click", () =>
-vaciarCarrito())
+btnVaciar.addEventListener("click", () => {
+vaciarCarrito()
+})
 
 const vaciarCarrito = () => {
     console.log("vaciando")
@@ -62,18 +77,46 @@ const vaciarCarrito = () => {
     actualizarPrecioFinal()
     actualizarValorCarrito()
     pintarProductos()
+
+    valorCarrito.innerText=0
+    contenedor.innerHTML = ""
+
+
 }
 
 // aca le agrego la funcion finalizar compra
 
+
 const finalizarCompra = document.getElementById("btn-finalizar")
 
 finalizarCompra.addEventListener("click", () =>
-compraFinalizada())
-
+{
+compraFinalizada()
+sweetAlertCarrito()
+})
 const compraFinalizada = () => {
-    finalizarCompra.innerText = "Muchas gracias por tu compra"
+
     valorCarrito.innerText=0
-    productos.innerHTML = `muchas gracias`
+    contenedor.innerHTML = ""
+    botonEliminar.innerHTML = ""
+    botonFinalizar.innerHTML= ""
+    precio.innerHTML= ""
    
-}
+
+
+
+    const pintarProductos = () => {
+            const div = document.createElement('div')
+            div.classList.add('productos')
+            div.innerHTML = `
+             `
+            contenedor.appendChild(div)
+                
+    
+               
+            
+    }
+    pintarProductos()
+    };
+
+    

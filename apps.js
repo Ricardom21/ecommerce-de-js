@@ -44,14 +44,24 @@ function aggCarrito (producto) {
     actualizarValorCarrito()
 }
 
+// aca use la api de github se puede apreciar el el footer 
+
+fetch('https://api.github.com/users/Ricardom21')
+    // Exito
+    .then(response => response.json())  // convertir a json
+    .then(json => 
+    actualizarGit(json)
+
+    )    //imprimir los datos en la consola
+    .catch(err => console.log('Solicitud fallida', err)); // Capturar errores
 
 
-
-
-
-
-
-
+    const actualizarGit = (json) => {
+        let valorgit = document.getElementById("githubR");
+        valorgit.textContent=json.login;
+    }
+    
+  
 
 
 

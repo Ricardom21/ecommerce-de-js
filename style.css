@@ -398,6 +398,10 @@ footer{
     .precio-final{
         display:flex;
         justify-content: center;
+        padding: 10px;
+        font-size: 10px;
+        color: white;
+        border-radius: 2px;
     }
   
     

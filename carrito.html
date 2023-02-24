@@ -40,16 +40,16 @@
 
             <h3 class="productos-titulos"> Carrito</h3>
             <div id="productos"></div>
-            <p class="carrito-vacio" >Tu carrito esta vacio. <i class="fa-solid fa-face-frown"></i></p>
+            <p id="carr-vacio" class="carrito-vacio"></p>
             <div class="botones">
-        <div class="boton-eliminar">
+        <div id="btn-eliminar" class="boton-eliminar">
             <button id="btn-vaciar" class="btn-carrito-vaciar">Vaciar Carrito</button>
         </div>
-        <div class="comprar">
+        <div id="finalizar" class="comprar">
             <button id="btn-finalizar" class="btn-carrito-finalizar">Finalizar Compra</button>
         </div>
     </div>
-    <div class="precio-final">
+    <div id="precio" class="precio-final">
         <p id="precio-final"  class="precio-final-uno">$3000</p>
     </div>
 
@@ -70,6 +70,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script src="./productos.js"></script>
     <script src="./carrito.js"></script>
