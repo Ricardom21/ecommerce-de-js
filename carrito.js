@@ -58,11 +58,22 @@ pintarProductos()
 const sweetAlertCarrito = document.getElementById("btn-finalizar")
 sweetAlertCarrito.addEventListener("click", () => {
         swal("Gracias por tu compra")
+})
+
+const sweetAlertVacio = document.getElementById("btn-finalizar")
+sweetAlertCarrito.addEventListener("click", () => {
+        swal("Carrito vacio")
 
 })
 
 
 // aca le agrego la funcion al boton vaciar carrito
+const eliminarDelCarrito = (id) => {
+    const producto = carrito.find((producto) =>
+producto.id === id)
+carrito.splice(carrito.indexOf(producto))
+}
+
 const btnVaciar = document.getElementById("btn-vaciar")
 
 btnVaciar.addEventListener("click", () => {
@@ -93,6 +104,13 @@ finalizarCompra.addEventListener("click", () =>
 {
 compraFinalizada()
 sweetAlertCarrito()
+   
+if (carrito.length>0) {
+    sweetAlertCarrito()
+} else{
+    sweetAlertVacio()
+}
+
 })
 const compraFinalizada = () => {
 
