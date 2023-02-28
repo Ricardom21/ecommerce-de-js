@@ -26,6 +26,7 @@ const contenedor = document.getElementById('productos')
 
 const pintarProductos = () => {
     let index = 0
+    contenedor.innerHTML = ""
     carrito.forEach((productos) => {
         const div = document.createElement('div')
         div.classList.add('productos')
@@ -39,7 +40,7 @@ const pintarProductos = () => {
                 <h3>${productos.nombre}</h3>
                 <span>⭐⭐⭐⭐⭐</span>
                 <p>${productos.precio} $</p>
-                <button onclick="eliminarDelCarrito(${index})" class="producto-eliminar" id="${productos.id}">Eliminar</button>
+                <button id="${productos.id}" class "btn-eliminar">Eliminar</button>
             </div>
         `
         contenedor.appendChild(div)
@@ -64,12 +65,14 @@ sweetAlertCarrito.addEventListener("click", () => {
 
 // aca le agrego la funcion al boton vaciar carrito
 const eliminarDelCarrito = (id) => {
-    const producto = carrito.find((productos) => productos.id === id);
-    carrito.splice(carrito.indexOf(producto), 1);
+    const producto = carrito.findIndex(productos => productos.id === id);
+    carrito.splice(producto, 1);
     pintarProductos();
   };
 
+  console.log(eliminarDelCarrito)
 
+// agregandole funcion al boton vaciar carrito 
   
 const btnVaciar = document.getElementById("btn-vaciar")
 
@@ -112,8 +115,6 @@ const compraFinalizada = () => {
     precio.innerHTML= ""
    
 
-
-
     const pintarProductos = () => {
             const div = document.createElement('div')
             div.classList.add('productos')
@@ -126,6 +127,23 @@ const compraFinalizada = () => {
             
     }
     pintarProductos()
+
+
     };
 
-    
+    // aca use la api de github se puede apreciar el el footer 
+
+fetch('https://api.github.com/users/Ricardom21')
+// Exito
+.then(response => response.json())  // convertir a json
+.then(json => 
+actualizarGit(json)
+
+)    //imprimir los datos en la consola
+.catch(err => console.log('Solicitud fallida', err)); // Capturar errores
+
+
+const actualizarGit = (json) => {
+    let valorgit = document.getElementById("githubR");
+    valorgit.textContent=json.login;
+}
