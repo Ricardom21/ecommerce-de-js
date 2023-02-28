@@ -23,6 +23,8 @@ const formulario = document.getElementById("form")
 formulario.addEventListener("submit",(e) => {
     e.preventDefault();
     agregarCliente();
+    localStorage.setItem("clientes",JSON.stringify(clientes))
+    formulario.reset();
 })
 
 function agregarCliente() {
@@ -34,14 +36,7 @@ const nuevoCliente = new Cliente(nombre, apellido, email, mensaje);
 clientes.push(nuevoCliente)
 }
 
-// agregando al local storage
-
-localStorage.setItem("clientes",JSON.stringify(clientes))
-formulario.reset();
-
-console.log(agregarCliente)
 
 
 
 
-const botonForm = document.getElementById("btn.form").value

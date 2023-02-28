@@ -39,7 +39,7 @@ const pintarProductos = () => {
                 <h3>${productos.nombre}</h3>
                 <span>⭐⭐⭐⭐⭐</span>
                 <p>${productos.precio} $</p>
-                
+                <button onclick="eliminarDelCarrito(${index})" class="producto-eliminar" id="${productos.id}">Eliminar</button>
             </div>
         `
         contenedor.appendChild(div)
@@ -60,20 +60,17 @@ sweetAlertCarrito.addEventListener("click", () => {
         swal("Gracias por tu compra")
 })
 
-const sweetAlertVacio = document.getElementById("btn-finalizar")
-sweetAlertCarrito.addEventListener("click", () => {
-        swal("Carrito vacio")
-
-})
 
 
 // aca le agrego la funcion al boton vaciar carrito
 const eliminarDelCarrito = (id) => {
-    const producto = carrito.find((producto) =>
-producto.id === id)
-carrito.splice(carrito.indexOf(producto))
-}
+    const producto = carrito.find((productos) => productos.id === id);
+    carrito.splice(carrito.indexOf(producto), 1);
+    pintarProductos();
+  };
 
+
+  
 const btnVaciar = document.getElementById("btn-vaciar")
 
 btnVaciar.addEventListener("click", () => {
@@ -81,7 +78,6 @@ vaciarCarrito()
 })
 
 const vaciarCarrito = () => {
-    console.log("vaciando")
     carrito.splice(0,carrito.length)
     localStorage.setItem("carrito",
     JSON.stringify([]))
@@ -105,11 +101,6 @@ finalizarCompra.addEventListener("click", () =>
 compraFinalizada()
 sweetAlertCarrito()
    
-if (carrito.length>0) {
-    sweetAlertCarrito()
-} else{
-    sweetAlertVacio()
-}
 
 })
 const compraFinalizada = () => {
