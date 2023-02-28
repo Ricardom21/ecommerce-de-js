@@ -1,6 +1,47 @@
-const formulario = document.querySelector("#form")
-const nombreForm = document.getElementById("nombre-form").value
-const apellidoForm = document.getElementById("apellido-form").value
-const emailForm = document.getElementById("email-form").value
-const mensajeForm = document.getElementById("mensajes-form").value
+class Cliente {
+    constructor (nombre,apellido,email,mensaje){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.mensaje = mensaje;
+
+    }
+}
+
+const clientes = []
+
+if (localStorage.getItem("clientes")) {
+    let cliente = JSON.parse(localStorage.getItem("clientes"))
+
+    for (let i = 0; i < cliente.length; i++) {
+        clientes.push(cliente[i])
+    }
+
+}
+const formulario = document.getElementById("form")
+
+formulario.addEventListener("submit",(e) => {
+    e.preventDefault();
+    agregarCliente();
+})
+
+function agregarCliente() {
+const nombre = document.getElementById("nombre-form").value;
+const apellido = document.getElementById("apellido-form").value;
+const email = document.getElementById("email-form").value;
+const mensaje = document.getElementById("mensajes-form").value;
+const nuevoCliente = new Cliente(nombre, apellido, email, mensaje);
+clientes.push(nuevoCliente)
+}
+
+// agregando al local storage
+
+localStorage.setItem("clientes",JSON.stringify(clientes))
+formulario.reset();
+
+console.log(agregarCliente)
+
+
+
+
 const botonForm = document.getElementById("btn.form").value
