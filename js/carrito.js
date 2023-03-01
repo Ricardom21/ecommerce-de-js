@@ -53,25 +53,32 @@ const pintarProductos = () => {
 
 pintarProductos()
 
-// aca cree la funcion para que me salga el alert
+// funcion para crear un alerta 
+
+const botonFinalizarCompra = document.getElementById("btn-finalizar")
+
+botonFinalizarCompra.addEventListener("click",funcionEjecutada)
+function funcionEjecutada(){
+    if (carrito.length) {
+        swal("Muy Bien!", "Muchas gracias por tu compra", "success");
+    } else { swal("Upps!", "Tu carrito esta vacio", "success");}
+}
 
 
-const sweetAlertCarrito = document.getElementById("btn-finalizar")
-sweetAlertCarrito.addEventListener("click", () => {
-        swal("Gracias por tu compra")
-})
+
+
 
 // aca le agrego la funcion al boton vaciar carrito
 const eliminarDelCarrito = (id) => {
     const producto = carrito.findIndex(productos => productos.id === id);
     carrito.splice(producto, 1);
     pintarProductos();
-  };
-
-  console.log(eliminarDelCarrito)
+  actualizarPrecioFinal()
+  actualizarValorCarrito()
+};
 
 // agregandole funcion al boton vaciar carrito 
-  
+
 const btnVaciar = document.getElementById("btn-vaciar")
 
 btnVaciar.addEventListener("click", () => {
@@ -100,7 +107,6 @@ const finalizarCompra = document.getElementById("btn-finalizar")
 finalizarCompra.addEventListener("click", () =>
 {
 compraFinalizada()
-sweetAlertCarrito()
    
 
 })
