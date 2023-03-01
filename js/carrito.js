@@ -22,7 +22,7 @@ const precio = document.getElementById("precio")
 
 const contenedor = document.getElementById('productos')
 
-// pintar el arrays
+// aca pinto de nuevo el arrays para cuando agregue los productos que desean comprar 
 
 const pintarProductos = () => {
     let index = 0
@@ -40,7 +40,7 @@ const pintarProductos = () => {
                 <h3>${productos.nombre}</h3>
                 <span>⭐⭐⭐⭐⭐</span>
                 <p>${productos.precio} $</p>
-                <button id="${productos.id}" class "btn-eliminar">Eliminar</button>
+                <button onclick="eliminarDelCarrito(${productos.id})" class="btn-eliminar" id="${productos.id}">Eliminar</button>
             </div>
         `
         contenedor.appendChild(div)
@@ -60,8 +60,6 @@ const sweetAlertCarrito = document.getElementById("btn-finalizar")
 sweetAlertCarrito.addEventListener("click", () => {
         swal("Gracias por tu compra")
 })
-
-
 
 // aca le agrego la funcion al boton vaciar carrito
 const eliminarDelCarrito = (id) => {
