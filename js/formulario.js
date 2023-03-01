@@ -45,13 +45,13 @@ datosEnviados()
 
    const datosEnviados = () => {
 
-    if (formulario.length > 0) {
-       
-        swal("Muy Bien!", "Bienvenido a nuestro newsletter", "success");
-    } else {
-         { swal("Upps!", "Tienes que introducir tus datos", "success");}
-    }
+    if (nombre == "" || apellido == "" || email == "" || mensaje == ""){
+        swal({
+            icon: 'error',
+            title: 'Algo salió mal...',
+            text: 'Debe completar todos los campos',
+        })
+    } else { swal("Muy Bien!", "Muchas gracias por tu compra", "success");
+}
 
-   }
-
-
+}
