@@ -36,7 +36,22 @@ const nuevoCliente = new Cliente(nombre, apellido, email, mensaje);
 clientes.push(nuevoCliente)
 }
 
+const enviarDatos = document.getElementById("btn.form")
 
+enviarDatos.addEventListener("click", () =>
+{
+datosEnviados()
+   })
 
+   const datosEnviados = () => {
+
+    if (formulario.length > 0) {
+       
+        swal("Muy Bien!", "Bienvenido a nuestro newsletter", "success");
+    } else {
+         { swal("Upps!", "Tienes que introducir tus datos", "success");}
+    }
+
+   }
 
 

@@ -53,21 +53,6 @@ const pintarProductos = () => {
 
 pintarProductos()
 
-// funcion para crear un alerta 
-
-const botonFinalizarCompra = document.getElementById("btn-finalizar")
-
-botonFinalizarCompra.addEventListener("click",funcionEjecutada)
-function funcionEjecutada(){
-    if (carrito.length) {
-        swal("Muy Bien!", "Muchas gracias por tu compra", "success");
-    } else { swal("Upps!", "Tu carrito esta vacio", "success");}
-}
-
-
-
-
-
 // aca le agrego la funcion al boton vaciar carrito
 const eliminarDelCarrito = (id) => {
     const producto = carrito.findIndex(productos => productos.id === id);
@@ -107,33 +92,19 @@ const finalizarCompra = document.getElementById("btn-finalizar")
 finalizarCompra.addEventListener("click", () =>
 {
 compraFinalizada()
-   
+   })
 
-})
-const compraFinalizada = () => {
+   const compraFinalizada = () => {
 
-    valorCarrito.innerText=0
-    contenedor.innerHTML = ""
-    botonEliminar.innerHTML = ""
-    botonFinalizar.innerHTML= ""
-    precio.innerHTML= ""
-   
-
-    const pintarProductos = () => {
-            const div = document.createElement('div')
-            div.classList.add('productos')
-            div.innerHTML = `
-             `
-            contenedor.appendChild(div)
-                
-    
-               
-            
+    if (carrito.length > 0) {
+        vaciarCarrito()
+        pintarProductos()
+        swal("Muy Bien!", "Muchas gracias por tu compra", "success");
+    } else {
+         { swal("Upps!", "Tu carrito esta vacio", "success");}
     }
-    pintarProductos()
 
-
-    };
+   }
 
     // aca use la api de github se puede apreciar el el footer 
 
