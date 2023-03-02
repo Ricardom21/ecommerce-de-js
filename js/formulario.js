@@ -1,3 +1,5 @@
+// creo mi constructor para ingresar clientes
+
 class Cliente {
     constructor (nombre,apellido,email,mensaje){
         this.nombre = nombre;
@@ -28,12 +30,25 @@ formulario.addEventListener("submit",(e) => {
 })
 
 function agregarCliente() {
+
 const nombre = document.getElementById("nombre-form").value;
 const apellido = document.getElementById("apellido-form").value;
 const email = document.getElementById("email-form").value;
 const mensaje = document.getElementById("mensajes-form").value;
-const nuevoCliente = new Cliente(nombre, apellido, email, mensaje);
-clientes.push(nuevoCliente)
+
+if (nombre.trim() === "" || apellido === "" || email === "" || mensaje === ""){
+
+    const nuevoCliente = new Cliente(nombre, apellido, email, mensaje);
+    clientes.push(nuevoCliente);
+
+    swal.fire({
+        icon: 'error',
+        title: 'Algo salió mal...',
+        text: 'Debe completar todos los campos',
+    })
+} else { swal("Muy Bien!", "Bienvenido a nuestro newsletter", "success");
+}
+
 }
 
 const enviarDatos = document.getElementById("btn.form")
@@ -44,14 +59,5 @@ datosEnviados()
    })
 
    const datosEnviados = () => {
-
-    if (nombre == "" || apellido == "" || email == "" || mensaje == ""){
-        swal({
-            icon: 'error',
-            title: 'Algo salió mal...',
-            text: 'Debe completar todos los campos',
-        })
-    } else { swal("Muy Bien!", "Muchas gracias por tu compra", "success");
-}
 
 }
