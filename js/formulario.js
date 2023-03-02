@@ -38,26 +38,14 @@ const mensaje = document.getElementById("mensajes-form").value;
 
 if (nombre.trim() === "" || apellido === "" || email === "" || mensaje === ""){
 
-    const nuevoCliente = new Cliente(nombre, apellido, email, mensaje);
-    clientes.push(nuevoCliente);
-
     swal.fire({
         icon: 'error',
         title: 'Algo salió mal...',
         text: 'Debe completar todos los campos',
     })
-} else { swal("Muy Bien!", "Bienvenido a nuestro newsletter", "success");
+} else { const nuevoCliente = new Cliente(nombre, apellido, email, mensaje);
+    clientes.push(nuevoCliente);
 }
 
 }
 
-const enviarDatos = document.getElementById("btn.form")
-
-enviarDatos.addEventListener("click", () =>
-{
-datosEnviados()
-   })
-
-   const datosEnviados = () => {
-
-}
