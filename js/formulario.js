@@ -43,9 +43,13 @@ if (nombre.trim() === "" || apellido === "" || email === "" || mensaje === ""){
         title: 'Algo salió mal...',
         text: 'Debe completar todos los campos',
     })
-} else { const nuevoCliente = new Cliente(nombre, apellido, email, mensaje);
+} else {  const nuevoCliente = new Cliente(nombre, apellido, email, mensaje);
     clientes.push(nuevoCliente);
+    swal.fire({
+        icon: 'success',
+        title: 'Muy bien...',
+        text: 'Suscripto a nuestro newsletter',
+    })
 }
 
 }
-

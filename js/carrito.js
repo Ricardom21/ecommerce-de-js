@@ -53,8 +53,25 @@ const pintarProductos = () => {
 
 pintarProductos()
 
-// aca le agrego la funcion al boton vaciar carrito
+// aca le agrego la funcion al boton vaciar carrito tambien le agregue toastify
 const eliminarDelCarrito = (id) => {
+
+    Toastify({
+        text: "Producto eliminado",
+        duration: 2000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #949191,#242121)",
+          borderRadius: "10px",
+          textTransform: "uppercase",
+          fontSize: "12px"
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+
     const producto = carrito.findIndex(productos => productos.id === id);
     carrito.splice(producto, 1);
     pintarProductos();
@@ -84,7 +101,7 @@ const vaciarCarrito = () => {
 
 }
 
-// aca le agrego la funcion finalizar compra
+// aca le agrego la funcion finalizar compra use librerias en el boton
 
 
 const finalizarCompra = document.getElementById("btn-finalizar")
