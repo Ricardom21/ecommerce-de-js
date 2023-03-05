@@ -46,6 +46,7 @@ function aggCarrito (producto) {
     Toastify({
         text: "Producto agregado",
         duration: 2000,
+        destination:"./carrito.html",
         close: true,
         gravity: "top", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
